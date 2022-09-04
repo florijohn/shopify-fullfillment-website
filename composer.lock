@@ -953,7 +953,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0.2",
+                "php": ">=7.4",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
