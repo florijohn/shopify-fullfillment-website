@@ -1,0 +1,67 @@
+cache:
+    key: "mamama-$CI_COMMIT_REF_SLUG"
+    paths:
+        - node_modules
+        - vendor
+
+stages:
+    - prepare
+    - build
+    - stage
+
+
+# build
+# ----------------------------------------------------------------
+build:
+    stage: build
+    tags:
+        - docker
+    image: edbizarro/gitlab-ci-pipeline-php:8.0-alpine
+    script:
+        - sudo bash -c "echo \"extension=mbstring\n\" > /etc/php/7.3/cli/conf.d/15-xml.ini"
+        - sudo bash -c "echo \"extension=gd\n\" > /etc/php/7.3/cli/conf.d/15-xml.ini"
+        - php build.php
+    cache:
+        key: "mamama-$CI_COMMIT_REF_SLUG"
+        paths:
+            - node_modules
+            - vendor
+    artifacts:
+        paths:
+            - "public"
+        expire_in: 24h
+    only:
+        - pushes
+
+
+# deploy stage:
+#     stage: stage
+#     tags:
+#         - shell
+#     before_script:
+#         - eval $(ssh-agent -s)
+#         - ssh-add <(echo "$SSH_KEY")
+#         - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+#     script:
+#         - ssh -p$SSH_PORT $SSH_USER@$SSH_HOST "mkdir -p /var/www/vhosts/machmamathe.de/_tmp_dev"
+#         - rsync -rav -e ssh --exclude='.git/' --exclude='.gitlab-ci.yml' --delete-excluded ./ $SSH_USER@$SSH_HOST:/var/www/vhosts/machmamathe.de/_tmp_dev
+#         - ssh -p$SSH_PORT $SSH_USER@$SSH_HOST "rm -rf /var/www/vhosts/machmamathe.de/dev.machmamathe.de"
+#         - ssh -p$SSH_PORT $SSH_USER@$SSH_HOST "mv /var/www/vhosts/machmamathe.de/_tmp_dev /var/www/vhosts/machmamathe.de/dev.machmamathe.de"
+#     only:
+#         - dev
+#     environment:
+#         name: dev
+#         url: https://dev.machmamathe.de
+
+
+
+
+# deploy production:
+#     stage: deploy
+#     tags:
+#         - shell
+#     before_script:
+#     script:
+#     only:
+#         - "master"
+#     when: manual

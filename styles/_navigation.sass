@@ -1,0 +1,47 @@
+@use "_theme.sass" as theme
+
+nav
+    ul
+        list-style: none
+        margin: 0
+        padding: 0
+        display: flex
+        justify-content: center
+        align-content: center
+        flex-wrap: wrap
+        overflow: hidden
+
+    ul ul
+        display: none
+        position: absolute
+        background-color: #f9f9f9
+        min-width: 160px
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+        z-index: 1
+
+    ul a:hover ul
+        display: block
+
+    li
+        margin: 0
+        padding: 0 0.5rem
+        line-height: 6rem
+
+    li li
+        margin-left: 1.5rem
+
+
+#table-of-contents
+    padding: 1rem
+
+    ul
+        list-style: decimal
+        padding-left: 3rem
+
+    li
+        margin: 0
+        padding: 0
+        line-height: 1.75em
+
+    ul ul
+        list-style: disc

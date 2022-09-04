@@ -1,0 +1,31 @@
+site_name: MachMaMathe!
+host_name: machmamathe.de
+copyright: MachMaMathe!
+owner: MachMaMathe!
+email: mail@machmamathe.de
+team:
+    - Dominik Brüchler
+    - Floris John
+
+### Social Media
+links:
+    facebook: https://www.facebook.com/machmamathe/
+    instagram: https://www.instagram.com/machmamathe/
+    pinterest: https://www.pinterest.de/machmamathe/
+    twitter: https://twitter.com/machmamathe
+    youtube: https://www.youtube.com/channel/UCLookn4fQylBRwic4l2JlRw
+
+twitter_site: '@machmamathe'
+
+### Languages
+supported_lang:
+    - de
+    - en
+
+language: en
+
+
+### footer
+contact: Du hast Fragen? Kontaktiere uns!
+legal_notice: Impressum
+privacy_policy: Datenschutz

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+    <div id="calc-cross-product">
+        <label>
+        <label for="calc-cone-radius">Radius</label>
+        <input id="calc-cone-radius" v-model="radius"><br>
+        <label for="calc-cone-height">Höhe</label>
+        <input id="calc-cone-height" v-model="height"><br>
+        <label for="calc-cone-area">Flächeninhalt Grundfläche</label>
+        <input id="calc-cone-area" v-model="area"><br>
+        <label for="calc-cone-scope">Umfang</label>
+        <input id="calc-cone-scope" v-model="scope"><br>
+        <label for="calc-cone-mantelhoehe">Mantelhöhe S</label>
+        <input id="calc-cone-mantelhoehe" v-model="mantelhoehe"><br>
+        <label for="calc-cone-mantelflaeche">Mantelfläche</label>
+        <input id="calc-cone-mantelflaeche" v-model="mantelflaeche"><br>
+        <label for="calc-cone-oberflaeche">Oberfläche</label>
+        <input id="calc-cone-oberflaeche" v-model="oberflaeche"><br>
+        <label for="calc-cone-volumen">Volumen</label>
+        <input id="calc-cone-volumen" v-model="volumen"><br>
+        
+    Ergebnisse:<br>
+    Radius: {{ radius1 }}<br>
+    Höhe: {{ height1 }}<br>
+    Flächeninhalt Grundfläche: {{ area1 }} </span><br>
+    <span>Umfang: {{ scope1 }} </span><br>
+    <span>Mantelhöhe S: {{ mantelhoehe1 }} </span><br>
+    <span>Mantelfläche: {{ mantelflaeche1 }} </span><br>
+    <span>Oberfläche: {{ oberflaeche1 }} </span><br>
+    <span>Volumen: {{ volumen1 }} </span><br>
+    <br>
+    <br>
+</div>
+        
+        <script src="index.js"></script>
+    </body>
+</html>

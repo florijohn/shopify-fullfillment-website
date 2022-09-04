@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+    <div id="calc-cross-product">
+    <table>
+        <tr>
+            <td rowspan="3"><img src="https://www.mathepower.com/klauf.png"></td>
+            <td><input id="calc-cross-product-a" v-model="a"></td>
+            <td rowspan="3"><img src="https://www.mathepower.com/klzu.png"></td>
+            <td rowspan="3"> x </td>
+            <td rowspan="3"><img src="https://www.mathepower.com/klauf.png"></td>
+            <td><input id="calc-cross-product-d" v-model="d"></td>
+            <td rowspan="3"><img src="https://www.mathepower.com/klzu.png"></td>
+        </tr>
+        <tr>
+            <td><input id="calc-cross-product-b" v-model="b"></td>
+            <td><input id="calc-cross-product-e" v-model="e"></td>
+        </tr>
+        <tr>
+            <td><input id="calc-cross-product-c" v-model="c"></td>
+            <td><input id="calc-cross-product-f" v-model="f"></td>
+        </tr>
+        <tr>
+            
+        </tr>
+    </table>
+    <span>Kreuzprodukt:</span>
+    <table>
+        <tr>
+            <td rowspan="3"><img src="https://www.mathepower.com/klauf.png"></td>
+            <td> {{ result1 }} </td>
+            <td rowspan="3"><img src="https://www.mathepower.com/klzu.png"></td>
+        </tr>
+        <tr>
+            <td> {{ result2 }} </td>
+        </tr>
+        <tr>
+            <td> {{ result3 }} </td>
+        </tr>
+        <tr>
+            
+        </tr>
+    </table>
+    <br>
+    <br>
+    <span>{{ no_values(selected) }}</span>
+</div>
+        
+        <script src="index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# Clean URL Rewrite
+# --------------------------------------------------
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php?page=$1&%{QUERY_STRING}
+
+
+# Cache Settings
+# --------------------------------------------------
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/ico "access plus 30 days"
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/jpg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+</IfModule>

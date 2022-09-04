@@ -1,0 +1,18 @@
+.vscode
+
+node_modules
+
+!public/styles
+public/styles/**
+!public/styles/.keep
+
+!public/images
+# TODO public/images/**
+!public/images/favicons/
+!public/images/.keep
+
+!public/scripts
+public/scripts/**
+!public/scripts/.keep
+
+public/??

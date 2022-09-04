@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+    <div id="calc-percentages">
+    <table>
+        <tr>
+            <td rowspan="3"> u= </td>
+            <td rowspan="3"><img src="https://www.mathepower.com/klauf.png"></td>
+            <td><input id="calc-scalar-product-a" v-model="a"></td>
+            <td rowspan="3"><img src="https://www.mathepower.com/klzu.png"></td>
+        </tr>
+        <tr>
+            <td><input id="calc-scalar-product-b" v-model="b"></td>
+        </tr>
+        <tr>
+            <td><input id="calc-scalar-product-c" v-model="c"></td>
+        </tr>
+        <tr>
+            
+        </tr>
+    </table>
+    <span>Betrag des Vektors: {{ result }}</span>
+    <br>
+    <br>
+    <span>{{ no_values(selected) }}</span>
+</div>
+        
+        <script src="index.js"></script>
+    </body>
+</html>

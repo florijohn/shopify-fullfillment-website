@@ -1,0 +1,28 @@
+@use "_theme.sass" as theme
+
+[class^=box]
+    padding: theme.spacing(1)
+    margin: theme.spacing(1) theme.spacing(-1)
+    border-radius: theme.$borderRadius
+
+[class^=box] > *:first-child
+    margin-top: 0
+    padding-top: 0
+
+[class^=box] > *:last-child
+    margin-bottom: 0
+    padding-bottom: 0
+
+.box-info
+    background: theme.$info
+    border: 1px solid darken(theme.$info, 5)
+
+    h2, h3, h4, h5, h6
+        color: darken(theme.$info, 60)
+
+.box-warn
+    background: theme.$warning
+    border: 1px solid darken(theme.$warning, 5)
+
+    h2, h3, h4, h5, h6
+        color: darken(theme.$warning, 60)

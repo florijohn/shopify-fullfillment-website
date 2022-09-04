@@ -1,0 +1,42 @@
+{
+  "name": "my-math-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "watch \"npm run build:pages\" pages templates styles lib config --interval=1",
+    "deploy": "npm run build:all && npm run compress:all",
+
+    "build:pages": "php build.php",
+    "build:styles": "sass --style=compressed --no-source-map styles/styles.sass public/styles/styles.css && echo done.",
+    "build:all": "npm run build:pages && npm run build:styles",
+
+    "watch:pages": "watch \"npm run build:pages\" pages templates lib config --interval=1",
+    "watch:styles": "watch \"npm run build:styles\" templates styles --interval=1",
+
+    "compress:pages": "node compress.js pages",
+    "compress:globals": "node compress.js images && node compress.js js",
+    "compress:styles": "node compress.js styles",
+    "compress:all": "npm run compress:globals && npm run compress:pages && npm run compress:styles",
+
+    "new-page": "node createPage.js && npm run build:pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://admin.bandlead.com/100ducks/my-math-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "event-stream": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-brotli": "^3.0.0",
+    "gulp-gzip": "^1.4.2",
+    "inquirer": "^8.2.0",
+    "js-yaml": "^4.1.0",
+    "ora": "^5.4.1",
+    "sass": "^1.45.1",
+    "watch": "^1.0.2"
+  }
+}

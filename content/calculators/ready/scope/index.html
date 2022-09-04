@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        
+    <div id="calc-percentages">
+    <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option>Quadrat</option>
+        <option>Rechteck</option>
+    </select>
+    <span>Ergebnis: {{ selected_calc(selected) }}</span>
+    <br><br>
+    <label for="calc-scope-sidea">Side A</label>
+    <input id="calc-scope-sidea" v-model="sidea">
+    <br>
+    <label for="calc-scope-sideb">Side B</label>
+    <input id="calc-scope-sideb" v-model="sideb">
+    <br>
+    <br>
+    <span>{{ no_values(selected) }}</span>
+</div>
+        
+        <script src="index.js"></script>
+    </body>
+</html>

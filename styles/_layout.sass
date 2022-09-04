@@ -1,0 +1,49 @@
+@use "_theme.sass" as theme
+
+main,
+.content
+    max-width: theme.$contentWidth
+    padding: theme.spacing(2)
+    margin: auto
+
+#page
+    margin-top: 7rem
+
+#table-of-contents
+    right: auto
+    bottom: 0
+    background: theme.$contentBackground
+    max-width: 30rem
+    margin-top: 1rem
+    border-radius: theme.$borderRadius
+
+header
+    background: theme.$contentBackground
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    height: 6rem
+
+main
+    background: theme.$contentBackground
+    border-radius: theme.$borderRadius
+    margin: 0 1rem theme.spacing(4)
+
+footer
+    background: theme.$footerBackground
+    padding: theme.spacing(2)
+    color: theme.$footerText
+    max-width: 120rem
+    margin: 1rem
+    border-radius: theme.$borderRadius
+
+@media screen and (min-width: 768px)
+    #page
+        margin-left: 30rem
+    #table-of-contents
+        position: fixed
+        left: 0
+        top: 6rem
+
+
