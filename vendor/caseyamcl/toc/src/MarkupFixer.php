@@ -42,7 +42,7 @@ class MarkupFixer
     /**
      * @var SlugifyInterface
      */
-    private $sluggifier;
+    private $slugifier;
 
     /**
      * Constructor
@@ -53,7 +53,7 @@ class MarkupFixer
     public function __construct(?HTML5 $htmlParser = null, ?SlugifyInterface $slugify = null)
     {
         $this->htmlParser = $htmlParser ?? new HTML5();
-        $this->sluggifier = $slugify ?? new UniqueSlugify();
+        $this->slugifier = $slugify ?? new UniqueSlugify();
     }
 
     /**
@@ -76,15 +76,23 @@ class MarkupFixer
         $domDocument->preserveWhiteSpace = true; // do not clobber whitespace
 
         // If using the default slugifier, ensure that a unique instance of the class
-        $slugger = $this->sluggifier instanceof UniqueSlugify ? new UniqueSlugify() : $this->sluggifier;
+        $slugger = $this->slugifier instanceof UniqueSlugify ? new UniqueSlugify() : $this->slugifier;
 
         /** @var DOMElement $node */
         foreach ($this->traverseHeaderTags($domDocument, $topLevel, $depth) as $node) {
-            if ($node->getAttribute('id')) {
-                continue;
+            // If no id is found, try the title attribute
+            $id = $node->getAttribute('id') ?: $node->getAttribute('title');
+
+            // If no title attribute, use the text content
+            $id = $slugger->slugify($id ?: $node->textContent);
+
+            // If the first character begins with a numeric, prepend 'toc-' on it.
+            if (ctype_digit(substr($id, 0, 1))) {
+                $id = 'toc-' . $id;
             }
 
-            $node->setAttribute('id', $slugger->slugify($node->getAttribute('title') ?: $node->textContent));
+            // Overwrite the id attribute
+            $node->setAttribute('id', $id);
         }
 
         return $this->htmlParser->saveHTML(

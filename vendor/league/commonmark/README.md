@@ -32,7 +32,7 @@ $converter = new CommonMarkConverter([
     'allow_unsafe_links' => false,
 ]);
 
-echo $converter->convertToHtml('# Hello World!');
+echo $converter->convert('# Hello World!');
 
 // <h1>Hello World!</h1>
 ```
@@ -47,7 +47,7 @@ $converter = new GithubFlavoredMarkdownConverter([
     'allow_unsafe_links' => false,
 ]);
 
-echo $converter->convertToHtml('# Hello World!');
+echo $converter->convert('# Hello World!');
 
 // <h1>Hello World!</h1>
 ```
@@ -173,6 +173,7 @@ This code is partially based on the [CommonMark JS reference implementation][com
 We'd also like to extend our sincere thanks the following sponsors who support ongoing development of this project:
 
  - [Tidelift](https://tidelift.com/subscription/pkg/packagist-league-commonmark?utm_source=packagist-league-commonmark&utm_medium=referral&utm_campaign=readme) for offering support to both the maintainers and end-users through their [professional support](https://tidelift.com/subscription/pkg/packagist-league-commonmark?utm_source=packagist-league-commonmark&utm_medium=referral&utm_campaign=readme) program
+ - [Blackfire](https://www.blackfire.io/) for providing an Open-Source Profiler subscription
  - [JetBrains](https://www.jetbrains.com/) for supporting this project with complimentary [PhpStorm](https://www.jetbrains.com/phpstorm/) licenses
  - [Taylor Otwell](https://twitter.com/taylorotwell) for sponsoring this project through GitHub sponsors
 

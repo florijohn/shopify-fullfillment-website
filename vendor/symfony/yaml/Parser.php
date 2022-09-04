@@ -85,6 +85,8 @@ class Parser
         try {
             $data = $this->doParse($value, $flags);
         } finally {
+            $this->refsBeingParsed = [];
+            $this->offset = 0;
             $this->lines = [];
             $this->currentLine = '';
             $this->numberOfParsedLines = 0;
@@ -952,7 +954,7 @@ class Parser
 
     private function isCurrentLineComment(): bool
     {
-        //checking explicitly the first char of the trim is faster than loops or strpos
+        // checking explicitly the first char of the trim is faster than loops or strpos
         $ltrimmedLine = '' !== $this->currentLine && ' ' === $this->currentLine[0] ? ltrim($this->currentLine, ' ') : $this->currentLine;
 
         return '' !== $ltrimmedLine && '#' === $ltrimmedLine[0];
