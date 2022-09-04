@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -6,6 +7,9 @@
     </head>
     <body>
         <h1>My App</h1>
-        <p>My App is running!</p>
+        <p>My App is running!YES PUBLIC</p>
     </body>
 </html>
+<?php
+echo "Hello World";
+?>
